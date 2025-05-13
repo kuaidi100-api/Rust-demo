@@ -12,7 +12,7 @@ Rust-demo 集成了快递查询（base）、电子面单与云打印（elec_prin
 
 ## Getting started
 
-Rust-demo使用和测试可参考`/test`目录下的`*_test.go`文件。
+Rust-demo使用和测试可参考`/test`目录下的`*_test.rs`文件。
 
 ```
 # git clone https://github.com/kuaidi100-api/Rust-demo.git
@@ -20,7 +20,7 @@ Rust-demo使用和测试可参考`/test`目录下的`*_test.go`文件。
 
 ## Add Config
 
-使用前先配置[account.go](https://github.com/kuaidi100-api/Rust-demo/blob/main/src/config/account.go)，账号信息可以登录快递100获取https://poll.kuaidi100.com/manager/page/myinfo/enterprise （注意不要泄露快递100的账号密码以及授权key等敏感信息，以防被他人盗用！！！）
+使用前先配置[account.rs](https://github.com/kuaidi100-api/Rust-demo/blob/main/src/config/account.rs)，账号信息可以登录快递100获取https://poll.kuaidi100.com/manager/page/myinfo/enterprise （注意不要泄露快递100的账号密码以及授权key等敏感信息，以防被他人盗用！！！）
 
 
 ## Use Junit Test
