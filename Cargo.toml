@@ -1,0 +1,22 @@
+[package]
+name = "rust-demo"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "HTTP请求工具"
+
+# 移除了MSVC特定配置，避免dlltool.exe错误
+# 如需静态链接，请在安装MSYS2后使用.cargo/config.toml配置
+
+[dependencies]
+reqwest = { version = "0.12.15", features = ["multipart", "json", "blocking"] }
+#md5 = "0.7.0"
+url = "2.5.4"
+#tokio = { version = "1.45.0", features = ["full"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+hex = "0.4.3"
+anyhow = "1.0.98"
+md-5 = "0.10.6"
+mockall = "0.11.4"
+
