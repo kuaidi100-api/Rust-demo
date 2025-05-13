@@ -1,1 +1,9 @@
-mod base_test;
+pub mod base_test;
+pub mod international_test;
+pub mod monitor_test;
+pub mod value_add_test;
+pub mod workorder_test;
+pub mod bsamecity_test;
+pub mod border_test;
+pub mod corder_test;
+pub mod elec_print_test;

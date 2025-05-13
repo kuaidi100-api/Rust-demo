@@ -91,14 +91,8 @@ pub fn do_map_request(m: HashMap<&str, &str>, post_url: &str) -> Result<String> 
 /// * `m` - 包含表单数据的HashMap
 /// * `file_path` - 文件路径
 /// * `post_url` - 请求URL
-pub fn do_file_request(m: HashMap<&str, &str>, file_path: &str, post_url: &str) -> Result<String> {
-    let path = Path::new(file_path);
-    let file_name = path.file_name()
-        .ok_or_else(|| anyhow!("无效的文件路径"))?;
-    let file_name = file_name.to_string_lossy();
-
+pub fn do_file_request(m: HashMap<&str, &str>, file_name: &str, file: &mut File, post_url: &str) -> Result<String> {
     // 打开文件
-    let mut file = File::open(path)?;
     let mut buffer = Vec::new();
     file.read_to_end(&mut buffer)?;
 
@@ -140,11 +134,12 @@ pub fn do_file_request(m: HashMap<&str, &str>, file_path: &str, post_url: &str) 
 
     // 打印响应内容
     println!("响应内容: {}", body);
+    println!();
     Ok(body)
 }
 
 /// 计算MD5签名并转为大写
-fn calculate_sign(input: &str) -> String {
+pub fn calculate_sign(input: &str) -> String {
     let mut hasher = Md5::new();
     hasher.update(input.as_bytes());
     let result = hasher.finalize();
@@ -181,6 +176,7 @@ fn execute(post_url: &str, form_data: HashMap<&str, &str>) -> Result<String> {
 
     // 打印响应内容
     println!("响应内容: {}", body);
+    println!();
     Ok(body)
 }
 
@@ -214,5 +210,6 @@ async fn execute_async(post_url: &str, form_data: HashMap<&str, &str>) -> Result
 
     // 打印响应内容
     println!("响应内容: {}", body);
+    println!();
     Ok(body)
 }
