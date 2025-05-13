@@ -36,7 +36,7 @@ Rust-demo使用和测试可参考`/test`目录下的`*_test.rs`文件。
 ### 电子面单与云打印(elec_print)接口
 - [电子面单下单接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/elec_order.rs)
 - [第三方平台账号授权](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/authThird.rs)
-- [第三方平台网点&面单余额接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print\third_info.rs)
+- [第三方平台网点&面单余额接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/third_info.rs)
 - [电子面单取消接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/elec_cancel.rs)
 
 - [获取店铺授权超链接接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/shop_authorize.rs)
