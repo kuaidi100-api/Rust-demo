@@ -93,3 +93,6 @@ Rust-demo使用和测试可参考`/test`目录下的`*_test.rs`文件。
 - [预约取件API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/pick_up.rs)
 - [取消预约API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/cancel_pick_up.rs)
 - [国际地址解析接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/international_address_resolution.rs)
+
+## Tips
+如需获取账号信息（如 key、customer、secret），或免费试用100单，请访问[API开放平台](https://api.kuaidi100.com/register/diff/)进行注册
