@@ -19,6 +19,8 @@ pub struct QueryBalanceParam {
 
 ///第三方平台网点&面单余额接口
 pub fn get_third_info() -> Result<(), Box<dyn std::error::Error>> {
+    let method = "getThirdInfo";
+    
     let param = QueryBalanceParam {
         partner_id: "123".to_string(),
         partner_key: "123".to_string(),
@@ -37,7 +39,8 @@ pub fn get_third_info() -> Result<(), Box<dyn std::error::Error>> {
         .to_string();
 
     // 发送请求
-    utils::http_util::do_request(
+    utils::http_util::do_method_request(
+        method,
         &t,
         &param_json,
         config::url::THIRD_INFO_URL
