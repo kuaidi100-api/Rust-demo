@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use crate::{config, utils};
 use serde::{Deserialize, Serialize};
 
@@ -24,6 +25,12 @@ pub struct PollParam {
     #[serde(rename = "number")]
     pub number: String,
 
+    #[serde(rename = "from")]
+    pub from: String,
+
+    #[serde(rename = "to")]
+    pub to: String,
+
     #[serde(rename = "key")]
     pub key: String,
 
@@ -45,15 +52,21 @@ pub fn poll() -> Result<(), Box<dyn std::error::Error>> {
     let param = PollParam {
         company: "yuantong".to_string(),
         number: "YT6186594166532".to_string(),
-        key: "XXX ".to_string(),
+        from: "".to_string(),
+        to: "".to_string(),
+        key: config::account::KEY.to_string(),
         parameters: parameters,
     };
 
     // 将参数转换为JSON字符串
     let param_json = serde_json::to_string(&param).map_err(|e| e.to_string())?;
 
+    let mut m:HashMap<&str, &str> = std::collections::HashMap::new();
+    m.insert("schema", "json");
+    m.insert("param", &param_json);
+
     // 发送请求
-    utils::http_util::customer_request(&param_json, config::url::POLL_URL)
+    utils::http_util::do_map_request(m, config::url::POLL_URL)
         .map_err(|e| e.to_string())?;
 
     Ok(())
