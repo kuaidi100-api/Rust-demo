@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use serde::{Serialize, Deserialize};
 use crate::{config, utils};
 
@@ -52,15 +53,19 @@ pub fn poll_map() -> Result<(), Box<dyn std::error::Error>> {
         number: "1136281381675".to_string(),
         from: "广东省深圳市南山区".to_string(),
         to: "北京市朝阳区".to_string(),
-        key: "XXX ".to_string(),
+        key: config::account::KEY.to_string(),
         parameters: parameters,
     };
 
     // 将参数转换为JSON字符串
     let param_json = serde_json::to_string(&param).map_err(|e| e.to_string())?;
+    
+    let mut m:HashMap<&str, &str> = std::collections::HashMap::new();
+    m.insert("schema", "json");
+    m.insert("param", &param_json);
 
     // 发送请求
-    utils::http_util::customer_request(&param_json, config::url::POLL_MAP_URL).map_err(|e| e.to_string())?;
+    utils::http_util::do_map_request(m, config::url::POLL_MAP_URL).map_err(|e| e.to_string())?;
 
     Ok(())
 }
