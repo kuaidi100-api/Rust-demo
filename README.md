@@ -30,8 +30,8 @@ Rust-demo使用和测试可参考`/test`目录下的`*_test.rs`文件。
 ### 快递查询(base)接口
 - [实时快递查询接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/query.rs)
 - [快递信息推送服务-订阅接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/poll.rs)
-- [快递查询地图轨迹](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/maptrack.rs)
-- [地图轨迹推送接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/PollMap.rs)
+- [快递查询地图轨迹](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/map_track.rs)
+- [地图轨迹推送接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/base/poll_map.rs)
 
 ### 电子面单与云打印(elec_print)接口
 - [电子面单下单接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/elec_print/elec_order.rs)
@@ -89,6 +89,7 @@ Rust-demo使用和测试可参考`/test`目录下的`*_test.rs`文件。
 - [快递预估价格查询接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/value_add/estimate_price.rs)
 
 ### 跨境服务(international)接口
+- [国际电子面单下单API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/api_call.rs)
+- [预约取件API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/pick_up.rs)
+- [取消预约API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/cancel_pick_up.rs)
 - [国际地址解析接口](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/international_address_resolution.rs)
-- [国际电子面单下单API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/pick_up.rs)
-- [国际电子面单取消预约API](https://github.com/kuaidi100-api/Rust-demo/blob/master/src/international/cancel_pick_up.rs)

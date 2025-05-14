@@ -31,7 +31,7 @@ pub struct CancelPickUpParam {
     pub pickup_confirmation_number: String,
 }
 
-///国际电子面单取消预约API
+///取消预约API
 pub fn cancel_pick_up() -> Result<(), Box<dyn std::error::Error>> {
     let param = CancelPickUpParam {
         pick_up_date: "2022-05-31".to_string(),

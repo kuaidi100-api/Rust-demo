@@ -61,7 +61,7 @@ pub struct PickUpParam {
     #[serde(rename = "packageInfos")]
     pub package_infos: Vec<PackageInfo>,
 }
-///国际电子面单下单API
+///预约取件API
 pub fn pick_up() -> Result<(), Box<dyn std::error::Error>> {
     let send_man = SendMan {
         name: "Kaka".to_string(),
